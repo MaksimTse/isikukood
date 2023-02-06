@@ -1,3 +1,4 @@
+
 def checklen(ikood:str)->bool:
     """Funktisoon tagastab True, kui pikkus on 11 sümbolid
     :param str ikood
@@ -99,8 +100,17 @@ def kontrollnr(ikood:str)->int:
         return jaak
 
 def naised_mehed(ikoodid: list)->list:
-    
-    return ikoodid
+    naised=[]
+    mehed=[]
+    for kood in ikoodid:
+        kood_=list(kood)
+        if int(kood[0])%2==0:
+            naised.append(kood)
+        else:
+            mehed.append(kood)
+    naised.extend(mehed)
+    naised.extend(mehed)
+    return naised
 
 def arvud_sorted(arvud:list)->list:
     arvud=list(map(int,arvud))
