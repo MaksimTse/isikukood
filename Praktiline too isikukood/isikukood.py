@@ -9,6 +9,7 @@ ikoodid=[]
 
 while True:
     ikood=input("sisestage sinu isikukood: \n")
+    if ikood=="-": break
     if checklen(ikood)==False:
         print("Liiga pikk või lühike isikukood")
         arvud.append(ikood)
@@ -28,6 +29,11 @@ while True:
                 print((kontrollnr(ikood)))
                 if kontrollnr(ikood)==int(ikood[-1]):
                     print("OK")
+                    ikoodid.append(ikood)
                 else:
                     print("!!!")
-                
+print()
+ikoodid=naised_mehed(ikoodid)
+print(ikoodid)
+arvud_sorted(arvud)
+print(arvud)
